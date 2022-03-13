@@ -1,0 +1,83 @@
+// _player.scss the underline makes this file a parser, we can add it to our main scss file and it will transfer all styles
+
+.player {
+  min-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.time-control {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  input {
+    width: 100%;
+    // removes all style from slider
+    -webkit-appearance: none;
+    background: transparent;
+    cursor: pointer;
+  }
+  p {
+    padding: 1rem;
+  }
+}
+
+.play-control {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  svg {
+    cursor: pointer;
+  }
+}
+
+// when tab selected
+input[type="range"]:focus {
+  outline: none;
+}
+// customize the dot in the slider for chrome
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+}
+// customize the dot in the slider for firefox
+input[type="range"]::-moz-range-thumb {
+  -webkit-appearance: none;
+  background: transparent;
+  border: none;
+}
+
+.track {
+  // we set the background in Player.jsx
+  // background: rgb(173, 200, 230);
+  width: 100%;
+  height: 1rem;
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.animate-track {
+  background: rgb(226, 226, 226);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(0%);
+  pointer-events: none;
+}
+
+@media screen and (max-width: 768px) {
+  .time-control {
+    width: 90%;
+  }
+  .play-control {
+    width: 60%;
+  }
+}
